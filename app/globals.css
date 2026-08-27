@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 0%;
+    --radius: 0.5rem;
+
+    /* Custom color variables */
+    --color-primary: #000000;
+    --color-secondary: #ed1c24;
+    --color-accent: #f3f4f6;
+
+    --color-buttonPrimary: #ed1c24;
+    --color-buttonPrimaryHover: #dc1c24;
+    --color-buttonPrimaryText: #ffffff;
+    --color-buttonSecondary: #000000;
+    --color-buttonSecondaryHover: #1f2937;
+    --color-buttonSecondaryText: #ffffff;
+    --color-buttonOutline: #000000;
+    --color-buttonOutlineHover: #f3f4f6;
+    --color-buttonOutlineText: #000000;
+
+    --color-headingPrimary: #000000;
+    --color-headingSecondary: #374151;
+    --color-bodyText: #6b7280;
+    --color-bodyTextLight: #9ca3af;
+    --color-linkColor: #ed1c24;
+    --color-linkHover: #dc1c24;
+
+    --color-backgroundPrimary: #ffffff;
+    --color-backgroundSecondary: #f9fafb;
+    --color-backgroundAccent: #f3f4f6;
+    --color-backgroundDark: #000000;
+
+    --color-borderPrimary: #e5e7eb;
+    --color-borderSecondary: #d1d5db;
+    --color-borderAccent: #ed1c24;
+
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-error: #ef4444;
+    --color-info: #3b82f6;
+
+    /* Font family - Update to prioritize Public Sans */
+    --font-family-sans:
+      var(--font-public-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-family-sans);
+  }
+}
+
+/* Custom utility classes for managed colors */
+@layer utilities {
+  .text-managed-heading-primary {
+    color: var(--color-headingPrimary);
+  }
+
+  .text-managed-heading-secondary {
+    color: var(--color-headingSecondary);
+  }
+
+  .text-managed-body {
+    color: var(--color-bodyText);
+  }
+
+  .text-managed-body-light {
+    color: var(--color-bodyTextLight);
+  }
+
+  .text-managed-link {
+    color: var(--color-linkColor);
+  }
+
+  .text-managed-link:hover {
+    color: var(--color-linkHover);
+  }
+
+  .bg-managed-primary {
+    background-color: var(--color-backgroundPrimary);
+  }
+
+  .bg-managed-secondary {
+    background-color: var(--color-backgroundSecondary);
+  }
+
+  .bg-managed-accent {
+    background-color: var(--color-backgroundAccent);
+  }
+
+  .bg-managed-dark {
+    background-color: var(--color-backgroundDark);
+  }
+
+  .border-managed-primary {
+    border-color: var(--color-borderPrimary);
+  }
+
+  .border-managed-secondary {
+    border-color: var(--color-borderSecondary);
+  }
+
+  .border-managed-accent {
+    border-color: var(--color-borderAccent);
+  }
+
+  .btn-managed-primary {
+    background-color: var(--color-buttonPrimary);
+    color: var(--color-buttonPrimaryText);
+  }
+
+  .btn-managed-primary:hover {
+    background-color: var(--color-buttonPrimaryHover);
+  }
+
+  .btn-managed-secondary {
+    background-color: var(--color-buttonSecondary);
+    color: var(--color-buttonSecondaryText);
+  }
+
+  .btn-managed-secondary:hover {
+    background-color: var(--color-buttonSecondaryHover);
+  }
+
+  .btn-managed-outline {
+    border: 2px solid var(--color-buttonOutline);
+    color: var(--color-buttonOutlineText);
+    background-color: transparent;
+  }
+
+  .btn-managed-outline:hover {
+    background-color: var(--color-buttonOutlineHover);
+  }
+
+  /* Font family utilities */
+  .font-sans {
+    font-family: var(--font-family-sans);
+  }
+
+  /* Enhanced form styles with 25% larger font sizes */
+  .form-input-enhanced {
+    @apply text-lg px-5 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-datia-red;
+  }
+
+  .form-label-enhanced {
+    @apply text-lg font-medium text-gray-700 mb-2 block;
+  }
+
+  .form-textarea-enhanced {
+    @apply text-lg px-5 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-datia-red;
+  }
+
+  .form-select-enhanced {
+    @apply text-lg px-5 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-datia-red;
+  }
+
+  .form-checkbox-enhanced {
+    @apply h-5 w-5 text-datia-red focus:ring-datia-red border-gray-300 rounded;
+  }
+
+  .form-checkbox-label-enhanced {
+    @apply ml-3 text-lg text-gray-700;
+  }
+}
+
+/* Wistia player placeholder styles */
+wistia-player[media-id='pghthuyp7z']:not(:defined) { 
+  background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/pghthuyp7z/swatch'); 
+  display: block; 
+  filter: blur(5px); 
+  padding-top: 56.25%; 
+}
