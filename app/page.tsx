@@ -74,7 +74,6 @@ export default function HomePage() {
             <p className="text-xl md:text-3xl text-gray-700 mb-4 font-medium">
               The AI-enabled fusion of data and media
             </p>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">Know More. Sell Smarter.</p>
             {/* Partner with Us button removed as requested */}
           </div>
         </div>
