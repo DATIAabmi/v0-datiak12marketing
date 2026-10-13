@@ -139,7 +139,6 @@ export default function Footer() {
           </p>
           <div className="flex gap-6">
             <a href="/privacy-policy" className="inline-flex min-h-[44px] items-center text-[#E5E5E5] hover:text-white text-[12px] uppercase tracking-[0.12em] font-semibold transition-colors">Privacy Policy</a>
-            <Link href="/terms" className="inline-flex min-h-[44px] items-center text-[#E5E5E5] hover:text-white text-[12px] uppercase tracking-[0.12em] font-semibold transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
