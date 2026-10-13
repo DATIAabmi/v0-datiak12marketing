@@ -1,0 +1,129 @@
+/*
+ * Theme for the /partner landing page. Everything is scoped to .partner-lp so the
+ * landing page's red/Articulat brand theme doesn't leak into the rest of the site.
+ * Values mirror the original standalone landing page (DATIAabmi/datia-landing-v0).
+ */
+.partner-lp {
+  --font-family-sans: "articulat-cf", Manrope, -apple-system, sans-serif;
+
+  --background: 0 0% 100%;
+  --foreground: 240 5% 26%; /* #3F3F46 */
+
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 25%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 25%;
+
+  --primary: 358 87% 52%; /* DATIA red #EF1A21 */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 0 0% 25%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 0 0% 96%;
+  --muted-foreground: 240 5% 26%; /* body copy color */
+
+  --accent: 358 87% 96%;
+  --accent-foreground: 358 87% 42%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 0 0% 92%;
+  --input: 0 0% 92%;
+  --ring: 358 87% 52%;
+
+  --radius: 1rem;
+
+  font-family: var(--font-family-sans);
+  font-size: 17px;
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* Dark sections opt in with the `dark` class, as in the original page. */
+.partner-lp .dark {
+  --background: 0 0% 8%; /* #141414 */
+  --foreground: 0 0% 100%;
+
+  --card: 0 0% 40%;
+  --card-foreground: 0 0% 100%;
+
+  --popover: 0 0% 40%;
+  --popover-foreground: 0 0% 100%;
+
+  --primary: 358 87% 52%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 0 0% 43%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 0 0% 47%;
+  --muted-foreground: 0 0% 90%; /* #E5E5E5 */
+
+  --accent: 358 87% 25%;
+  --accent-foreground: 358 87% 75%;
+
+  --destructive: 0 62% 40%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 0 0% 49%;
+  --input: 0 0% 49%;
+  --ring: 358 87% 62%;
+}
+
+.partner-lp h1,
+.partner-lp h2,
+.partner-lp h3,
+.partner-lp h4,
+.partner-lp h5,
+.partner-lp h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* The original theme mapped font-medium to 600. */
+.partner-lp .font-medium {
+  font-weight: 600;
+}
+
+.partner-lp ::selection {
+  background-color: hsl(var(--primary));
+  color: #fff;
+}
+
+@keyframes client-ticker-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.partner-lp .client-ticker-track {
+  animation: client-ticker-scroll 65s linear infinite;
+}
+
+.partner-lp .client-ticker {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.partner-lp .client-ticker:hover .client-ticker-track,
+.partner-lp .client-ticker:focus-within .client-ticker-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partner-lp .client-ticker {
+    overflow-x: auto;
+  }
+
+  .partner-lp .client-ticker-track {
+    animation: none;
+  }
+}
